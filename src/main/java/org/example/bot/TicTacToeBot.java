@@ -76,7 +76,7 @@ public class TicTacToeBot {
         this.board = board;
     }
 
-    public void generateMove() {
+    public void generateMove() throws IllegalStateException{
 
         List<Option> options = new ArrayList<>();
         options.add(new Option(new Cell(0, 0), new Cell(0, 1), new Cell(0, 2)));
@@ -98,6 +98,8 @@ public class TicTacToeBot {
 
             return Float.compare(o_2_score, o_1_score);
         });
+
+        if (availableOptions.isEmpty()) throw new IllegalStateException("No available moves!");
 
         Cell finalCell = availableOptions.getFirst().getPossibleMove();
         row = finalCell.xCoordinate;
