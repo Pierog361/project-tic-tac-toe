@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TicTacToeBot {
 
-    private final float blocking_parameter = 0.5f;
+    private final float blocking_parameter = 1f;
     private final float wining_parameter = 1f;
 
     private final char botChar = Board.O;
